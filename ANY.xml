@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression ANY">
+    <parameter name="browser" value="${browser}" />
+    <parameter name="environment" value="${environment}"/>
+    <parameter name="IATSSingle" value="IATSSingle"/>
+    <parameter name="IATSRecurring" value="IATSRecurring"/>
+    <parameter name="IATSACHSingle" value="IATSACHSingle"/>
+    <parameter name="IATSACHRecurring" value="IATSACHRecurring"/>
+    <parameter name="IATSACHRecurPaymenttypelogic" value="IATSACHRecurPaymenttypelogic"/>
+    <parameter name="IATSSingleOtherAUD" value="IATSSingleOtherAUD"/>
+    <parameter name="IATSSingleOtherCAD" value="IATSSingleOtherCAD"/>
+    <parameter name="IATSSingleOtherUSD" value="IATSSingleOtherUSD"/>
+    <parameter name="IATSSingleCurrencyBasedUSD" value="IATSSingleCurrencyBasedUSD"/>
+    <parameter name="IATSSingleCurrencyBadGatewayCAD" value="IATSSingleCurrencyBadGatewayCAD"/>
+    <parameter name="IATSvalidateTransaction" value="IATSvalidateTransaction"/>
+    <parameter name="moneriseSelectSingle" value="moneriseSelectSingle"/>
+    <parameter name="moneriseSelectRecurring" value="moneriseSelectRecurring"/>
+    <parameter name="monerisVaultRecurring" value="monerisVaultRecurring"/>
+    <parameter name="monerisSingleNoCvv" value="monerisSingleNoCvv"/>
+    <parameter name="monerisRecurringNoCvv" value="monerisRecurringNoCvv"/>
+    <parameter name="monerisVault3DSingle" value="monerisVault3DSingle"/>
+    <parameter name="monerisVault3DRecurring" value="monerisVault3DRecurring"/>
+    <parameter name="moneriseSelectSingleUP" value="moneriseSelectSingleUP"/>
+    <parameter name="payflowProSingle" value="payflowProSingle"/>
+    <parameter name="payflowProRecurring" value="payflowProRecurring"/>
+    <parameter name="payflowProPayViaPaypal" value="payflowProPayViaPaypal"/>
+    <test name="Donations"  preserve-order="false">
+        <groups>
+            <define name="Only">
+            <include name="IATSSingle"/>
+            </define>
+            <run>
+                <include name="all"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="IATS" >
+                <methods>
+                    <include name="IATSSingle" />
+                    <include name="IATSRecurring" />
+                    <include name="IATSACHSingle" />
+                    <include name="IATSACHRecurring" />
+                    <include name="IATSACHRecurPaymenttypelogic" />
+                    <include name="IATSSingleOtherAUD" />
+                    <include name="IATSSingleOtherCAD" />
+                    <include name="IATSSingleOtherUSD" />
+                    <include name="IATSSingleCurrencyBasedUSD" />
+                    <include name="IATSSingleCurrencyBadGatewayCAD" />
+                    <include name="IATSvalidateTransaction" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="dMoneris"  preserve-order="true">-->
+<!--        <classes>-->
+<!--            <class name="com.fnoor.FundraisingTestAWS.MONERIS" >-->
+<!--                <methods>-->
+<!--                    <include name="moneriseSelectSingle" />-->
+<!--                    <include name="moneriseSelectRecurring" />-->
+<!--                    <include name="monerisVaultRecurring" />-->
+<!--                    <include name="monerisSingleNoCvv" />-->
+<!--                    <include name="monerisRecurringNoCvv" />-->
+<!--                    <include name="monerisVault3DSingle" />-->
+<!--                    <include name="monerisVault3DRecurring" />-->
+<!--                    <include name="moneriseSelectSingleUP" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
